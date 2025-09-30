@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+
+:root {
+  --bg-start: 14 14 18; /* #0E0E12 */
+  --bg-end: 4 6 10;    /* #04060A */
+  --accent: 94 234 212; /* teal-300 */
+  --muted: 148 163 184; /* slate-400 */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(160deg, rgb(var(--bg-start)) 0%, rgb(var(--bg-end)) 100%);
+  color: white;
+}
+
+.select-dark,
+select {
+  background-color: rgba(255,255,255,0.06);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.10);
+}
+
+/* Match dropdown list to app background */
+select option, select optgroup {
+  background-color: rgb(var(--bg-start));
+  color: #ffffff;
+}
+
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -100% auto auto -100%;
+  width: 60%;
+  height: 200%;
+  transform: rotate(25deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  animation: sheen 9s ease-in-out infinite;
+}
+
+@keyframes sheen {
+  0% { transform: translateX(-120%) rotate(25deg); }
+  70% { transform: translateX(220%) rotate(25deg); }
+  100% { transform: translateX(220%) rotate(25deg); }
+}
