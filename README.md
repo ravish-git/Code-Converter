@@ -24,7 +24,7 @@ Includes OCR support to extract code directly from images 📷➡️💻.
 
 Clone the project
 ```bash
-git clone https://github.com/<ravish-git>/aicodeconverter.git
+git clone https://github.com/ravish-git/aicodeconverter.git
 cd aicodeconverter
 npm install
 npm run dev
